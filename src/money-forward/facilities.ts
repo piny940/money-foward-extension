@@ -4,6 +4,7 @@ class Facilities {
   private facilityEls: Element[]
   private headEls: Element[]
   private headIdxs: number[]
+  protected TITLE = ''
 
   constructor() {
     this.facilityEls = this.getFacilityEls()
@@ -25,43 +26,37 @@ class Facilities {
       return this.facilityEls.slice(titleIdx + 1)
     return this.facilityEls.slice(titleIdx + 1, this.headIdxs[titleIdxIdx + 1])
   }
-}
 
-export class Banks extends Facilities {
-  private TITLE = '銀行'
-
-  constructor() {
-    super()
-  }
-
-  getBankMoney = () => {
-    const bankEls = this.getContentEls(this.TITLE)
-    const moneyEls = bankEls.map((el) =>
-      el.querySelector('ul.amount>li.number')
-    )
+  getMoneyAmount = () => {
+    const detailEl = this.getContentEls(this.TITLE)
+    const moneyEls = detailEl.map((el) => el.querySelector('ul>li.number'))
     const moneyNums = moneyEls.map((el) =>
       moneyStrToNum(el?.textContent ?? '0')
     )
     return moneyNums.reduce((acc, cur) => acc + cur, 0)
+  }
+}
+
+export class Banks extends Facilities {
+  protected override TITLE = '銀行'
+
+  constructor() {
+    super()
   }
 }
 
 export class CreditCards extends Facilities {
-  private TITLE = 'カード'
+  protected override TITLE = 'カード'
 
   constructor() {
     super()
   }
+}
 
-  getCreditCardMoney = () => {
-    const creditCardEls = this.getContentEls(this.TITLE)
-    console.log(creditCardEls)
-    const moneyEls = creditCardEls.map((el) =>
-      el.querySelector('ul.amount>li.number')
-    )
-    const moneyNums = moneyEls.map((el) =>
-      moneyStrToNum(el?.textContent ?? '0')
-    )
-    return moneyNums.reduce((acc, cur) => acc + cur, 0)
+export class Cash extends Facilities {
+  protected override TITLE = '財布（現金管理）'
+
+  constructor() {
+    super()
   }
 }
