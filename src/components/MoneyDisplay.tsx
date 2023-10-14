@@ -1,15 +1,23 @@
 import React, { memo } from 'react'
+import styled from 'styled-components'
 
 export type MoneyDisplayProps = {
   amount: number
   title: string
 }
+const MoneyP = styled.p`
+  font-size: 18px;
+
+  input {
+    font-size: 18px;
+  }
+`
 
 const MoneyDisplay = ({ amount, title }: MoneyDisplayProps): JSX.Element => {
   return (
     <div className="card p-3">
       <h2 className="h5">{title}</h2>
-      <p className="d-flex align-items-center">
+      <MoneyP className="d-flex align-items-center">
         <input
           type="text"
           name="previous"
@@ -18,7 +26,7 @@ const MoneyDisplay = ({ amount, title }: MoneyDisplayProps): JSX.Element => {
           value={amount}
         />
         円
-      </p>
+      </MoneyP>
     </div>
   )
 }
