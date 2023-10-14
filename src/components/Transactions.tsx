@@ -11,9 +11,11 @@ const Transactions = (): JSX.Element => {
     const nextId = transactions[transactions.length - 1]?.id + 1 || 0
     setTransactions([...transactions, { amount: '0', id: nextId }])
   }
-  const onChange = (id: number, amount: string) => {
-    const trans: TransactionInput = { id, amount }
-    setTransactions([trans])
+  const onValueChange = (id: number, amount: string) => {
+    const newTrans: TransactionInput = { id, amount }
+    setTransactions(
+      transactions.map((trans) => (trans.id === id ? newTrans : trans))
+    )
   }
 
   return (
@@ -28,7 +30,7 @@ const Transactions = (): JSX.Element => {
         {transactions.map((transaction) => (
           <li key={transaction.id} className="d-flex align-items-center">
             <TransactionItem
-              onValueChange={onChange}
+              onValueChange={onValueChange}
               transaction={transaction}
             />
           </li>
