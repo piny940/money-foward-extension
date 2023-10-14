@@ -21,6 +21,7 @@ export class Balance {
       getBankMoney() +
       getCreditCardMoney() +
       getCashMoney() -
+      this.getTransactionsMoney() -
       this.previousRestSentMoney()
     return save - this.EXCLUDE_BANK - this.EXCLUDE_CASH
   }
@@ -40,5 +41,8 @@ export class Balance {
       id: trans.id,
       amount: parseInt(trans.amount) || 0,
     }))
+  }
+  private getTransactionsMoney = () => {
+    return this.transactions.reduce((acc, cur) => acc + cur.amount, 0)
   }
 }
