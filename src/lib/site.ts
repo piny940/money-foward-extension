@@ -1,4 +1,5 @@
 import {
+  _getBalance,
   _getBankMoney,
   _getCashMoney,
   _getCreditCardMoney,
@@ -9,3 +10,4 @@ export const setRootEl = _setRootEl
 export const getBankMoney = _getBankMoney
 export const getCreditCardMoney = _getCreditCardMoney
 export const getCashMoney = _getCashMoney
+export const _getCurrentBalance = _getBalance
