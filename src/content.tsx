@@ -3,8 +3,9 @@ import React from 'react'
 import { setRootEl } from './lib/export'
 import './styles/global.scss'
 import 'bootstrap'
+import MoneyApp from './containers/MoneyApp'
 
 const rootEl = setRootEl()
 rootEl.id = 'root'
 const root = createRoot(rootEl)
-root.render(<div>hello world</div>)
+root.render(<MoneyApp />)
