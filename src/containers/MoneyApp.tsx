@@ -3,6 +3,7 @@ import { memo } from 'react'
 import styled from 'styled-components'
 import MoneyDisplay from '../components/MoneyDisplay'
 import { Balance } from '../lib/balance'
+import Transactions from '../components/Transactions'
 
 const RootDiv = styled.div`
   position: fixed;
@@ -18,6 +19,7 @@ const MoneyApp = (): JSX.Element => {
   return (
     <RootDiv className="bg-body root card p-3">
       <h1>Money App</h1>
+      <Transactions />
       <ul className="list-unstyled">
         <li>
           <MoneyDisplay amount={prevSave} title="先月までの貯金" />
