@@ -10,7 +10,7 @@ const RootDiv = styled.div`
 
 const MoneyApp = (): JSX.Element => {
   return (
-    <RootDiv className="bg-body">
+    <RootDiv className="bg-body card p-3">
       <h1>Money App</h1>
     </RootDiv>
   )
