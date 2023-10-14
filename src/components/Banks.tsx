@@ -1,6 +1,7 @@
 import React, { ChangeEventHandler, FormEventHandler } from 'react'
 import { memo } from 'react'
 import styled from 'styled-components'
+import AddBankButton from './AddBankButton'
 
 const BankInput = styled.input`
   font-size: 16px;
@@ -9,13 +10,21 @@ const BankInput = styled.input`
 const Banks = (): JSX.Element => {
   const [transactions, setTransactions] = React.useState<string[]>([])
 
+  const addTransaction = () => {
+    setTransactions([...transactions, ''])
+  }
   const onChange = (amount: string) => {
     setTransactions([amount])
   }
 
   return (
     <div>
-      <h2 className="h5">銀行の収支</h2>
+      <h2 className="h5">
+        銀行の収支
+        <span className="ms-2">
+          <AddBankButton onClick={addTransaction} />
+        </span>
+      </h2>
       <ul className="ps-0">
         <li className="d-flex align-items-center">
           <BankInput
