@@ -1,20 +1,19 @@
 import React from 'react'
 import { memo } from 'react'
-import styled from 'styled-components'
 import AddBankButton from './AddBankButton'
-
-const BankInput = styled.input`
-  font-size: 16px;
-`
+import TransactionItem from './TransactionItem'
+import { TransactionInput } from '../lib/types'
 
 const Transactions = (): JSX.Element => {
-  const [transactions, setTransactions] = React.useState<string[]>([])
+  const [transactions, setTransactions] = React.useState<TransactionInput[]>([])
 
   const addTransaction = () => {
-    setTransactions([...transactions, ''])
+    const nextId = transactions[transactions.length - 1]?.id + 1 || 0
+    setTransactions([...transactions, { amount: '0', id: nextId }])
   }
-  const onChange = (amount: string) => {
-    setTransactions([amount])
+  const onChange = (id: number, amount: string) => {
+    const trans: TransactionInput = { id, amount }
+    setTransactions([trans])
   }
 
   return (
@@ -26,17 +25,14 @@ const Transactions = (): JSX.Element => {
         </span>
       </h2>
       <ul className="ps-0">
-        <li className="d-flex align-items-center">
-          <BankInput
-            type="text"
-            name="bank1"
-            id=""
-            className="form-control flex-shrink-1 me-2"
-            value={transactions[0]}
-            onChange={(e) => onChange(e.target.value)}
-          />
-          円
-        </li>
+        {transactions.map((transaction) => (
+          <li key={transaction.id} className="d-flex align-items-center">
+            <TransactionItem
+              onValueChange={onChange}
+              transaction={transaction}
+            />
+          </li>
+        ))}
       </ul>
     </div>
   )
