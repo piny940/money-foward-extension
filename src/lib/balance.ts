@@ -9,7 +9,7 @@ import { Transaction, TransactionInput } from './types'
 export class Balance {
   private SENT_MONEY_PER_MONTH = 40000
   private EXCLUDE_BANK = 200000
-  private EXCLUDE_CASH = 100000
+  private EXCLUDE_CASH = 70000
   private transactions: Transaction[]
 
   constructor(transactions: TransactionInput[]) {
