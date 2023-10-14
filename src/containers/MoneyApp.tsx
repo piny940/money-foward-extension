@@ -13,11 +13,11 @@ const RootDiv = styled.div`
 `
 
 const MoneyApp = (): JSX.Element => {
-  const balance = useMemo(() => new Balance(), [])
-  const prevSave = useMemo(() => balance.getPreviousSave(), [balance])
-  const current = useMemo(() => balance.getCurrentBalance(), [balance])
   const { transactions, addTransaction, deleteTransaction, updateTransaction } =
     useTransactions()
+  const balance = useMemo(() => new Balance(transactions), [])
+  const prevSave = useMemo(() => balance.getPreviousSave(), [balance])
+  const current = useMemo(() => balance.getCurrentBalance(), [balance])
 
   return (
     <RootDiv className="bg-body root card p-3">

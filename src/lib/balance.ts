@@ -4,11 +4,17 @@ import {
   getCashMoney,
   getCreditCardMoney,
 } from './site'
+import { TransactionInput } from './types'
 
 export class Balance {
   private SENT_MONEY_PER_MONTH = 40000
   private EXCLUDE_BANK = 200000
   private EXCLUDE_CASH = 100000
+  private transactions: TransactionInput[]
+
+  constructor(transactions: TransactionInput[]) {
+    this.transactions = transactions
+  }
 
   getPreviousSave = () => {
     const save =
