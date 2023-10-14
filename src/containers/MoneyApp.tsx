@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import MoneyDisplay from '../components/MoneyDisplay'
 import { Balance } from '../lib/balance'
 import Transactions from '../components/Transactions'
+import { useTransactions } from '../lib/hooks'
 
 const RootDiv = styled.div`
   position: fixed;
@@ -15,11 +16,18 @@ const MoneyApp = (): JSX.Element => {
   const balance = useMemo(() => new Balance(), [])
   const prevSave = useMemo(() => balance.getPreviousSave(), [balance])
   const current = useMemo(() => balance.getCurrentBalance(), [balance])
+  const { transactions, addTransaction, deleteTransaction, updateTransaction } =
+    useTransactions()
 
   return (
     <RootDiv className="bg-body root card p-3">
       <h1>Money App</h1>
-      <Transactions />
+      <Transactions
+        transactions={transactions}
+        addTransaction={addTransaction}
+        deleteTransaction={deleteTransaction}
+        updateTransaction={updateTransaction}
+      />
       <ul className="list-unstyled">
         <li>
           <MoneyDisplay amount={prevSave} title="先月までの貯金" />
