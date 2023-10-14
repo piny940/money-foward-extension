@@ -4,16 +4,16 @@ import {
   getCashMoney,
   getCreditCardMoney,
 } from './site'
-import { TransactionInput } from './types'
+import { Transaction, TransactionInput } from './types'
 
 export class Balance {
   private SENT_MONEY_PER_MONTH = 40000
   private EXCLUDE_BANK = 200000
   private EXCLUDE_CASH = 100000
-  private transactions: TransactionInput[]
+  private transactions: Transaction[]
 
   constructor(transactions: TransactionInput[]) {
-    this.transactions = transactions
+    this.transactions = this.toTransactions(transactions)
   }
 
   getPreviousSave = () => {
@@ -34,4 +34,11 @@ export class Balance {
 
   private previousRestSentMoney = () =>
     this.SENT_MONEY_PER_MONTH * (this.restMonths() + 1)
+
+  private toTransactions = (transactions: TransactionInput[]) => {
+    return transactions.map((trans) => ({
+      id: trans.id,
+      amount: parseInt(trans.amount) || 0,
+    }))
+  }
 }

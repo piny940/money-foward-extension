@@ -15,7 +15,7 @@ const RootDiv = styled.div`
 const MoneyApp = (): JSX.Element => {
   const { transactions, addTransaction, deleteTransaction, updateTransaction } =
     useTransactions()
-  const balance = useMemo(() => new Balance(transactions), [])
+  const balance = useMemo(() => new Balance(transactions), [transactions])
   const prevSave = useMemo(() => balance.getPreviousSave(), [balance])
   const current = useMemo(() => balance.getCurrentBalance(), [balance])
 
