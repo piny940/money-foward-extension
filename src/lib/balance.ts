@@ -1,4 +1,4 @@
-import { getBankMoney, getCreditCardMoney } from './site'
+import { getBankMoney, getCashMoney, getCreditCardMoney } from './site'
 
 export class Balance {
   private SENT_MONEY_PER_MONTH = 40000
@@ -7,8 +7,11 @@ export class Balance {
 
   getPreviousSave = () => {
     const save =
-      getBankMoney() + getCreditCardMoney() - this.previousRestSentMoney()
-    return save - this.EXCLUDE_BANK
+      getBankMoney() +
+      getCreditCardMoney() +
+      getCashMoney() -
+      this.previousRestSentMoney()
+    return save - this.EXCLUDE_BANK - this.EXCLUDE_CASH
   }
 
   private restMonths = () => {
