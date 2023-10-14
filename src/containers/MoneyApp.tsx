@@ -23,7 +23,16 @@ const MoneyApp = (): JSX.Element => {
           <MoneyDisplay amount={prevSave} title="先月までの貯金" />
         </li>
         <li>
+          <span className="h5 w-100 d-inline-block text-center">+</span>
+        </li>
+        <li>
           <MoneyDisplay amount={current} title="今月の収支" />
+        </li>
+        <li>
+          <span className="h5 w-100 d-inline-block text-center">=</span>
+        </li>
+        <li>
+          <MoneyDisplay amount={prevSave + current} title="今月の貯金" />
         </li>
       </ul>
     </RootDiv>
