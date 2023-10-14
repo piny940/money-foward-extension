@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ChangeEventHandler, FormEventHandler } from 'react'
 import { memo } from 'react'
 import styled from 'styled-components'
 
@@ -7,6 +7,12 @@ const BankInput = styled.input`
 `
 
 const Banks = (): JSX.Element => {
+  const [transactions, setTransactions] = React.useState<string[]>([])
+
+  const onChange = (amount: string) => {
+    setTransactions([amount])
+  }
+
   return (
     <div>
       <h2 className="h5">銀行の収支</h2>
@@ -17,7 +23,8 @@ const Banks = (): JSX.Element => {
             name="bank1"
             id=""
             className="form-control flex-shrink-1 me-2"
-            value={3000}
+            value={transactions[0]}
+            onChange={(e) => onChange(e.target.value)}
           />
           円
         </li>
