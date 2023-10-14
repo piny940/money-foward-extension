@@ -1,25 +1,41 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { memo } from 'react'
 import AddBankButton from './AddBankButton'
 import TransactionItem from './TransactionItem'
 import { TransactionInput } from '../lib/types'
+import { loadTransactions, saveTransactions } from '../lib/storage'
 
 const Transactions = (): JSX.Element => {
+  const [year, month] = [new Date().getFullYear(), new Date().getMonth() + 1]
   const [transactions, setTransactions] = React.useState<TransactionInput[]>([])
 
-  const addTransaction = () => {
+  const addTransaction = async () => {
     const nextId = transactions[transactions.length - 1]?.id + 1 || 0
-    setTransactions([...transactions, { amount: '0', id: nextId }])
+    const newTransactions = [...transactions, { amount: '0', id: nextId }]
+    setTransactions(newTransactions)
+    await saveTransactions(year, month, newTransactions)
   }
-  const deleteTransaction = (id: number) => {
-    setTransactions(transactions.filter((trans) => trans.id !== id))
+  const deleteTransaction = async (id: number) => {
+    const newTransactions = transactions.filter((trans) => trans.id !== id)
+    setTransactions(newTransactions)
+    await saveTransactions(year, month, newTransactions)
   }
-  const onValueChange = (id: number, amount: string) => {
+  const onValueChange = async (id: number, amount: string) => {
     const newTrans: TransactionInput = { id, amount }
-    setTransactions(
-      transactions.map((trans) => (trans.id === id ? newTrans : trans))
+    const newTransactions = transactions.map((trans) =>
+      trans.id === id ? newTrans : trans
     )
+    setTransactions(newTransactions)
+    await saveTransactions(year, month, newTransactions)
   }
+  const loadSetTransactions = async () => {
+    const loadedTransactions = (await loadTransactions(year, month)) || []
+    setTransactions(loadedTransactions)
+  }
+
+  useEffect(() => {
+    void loadSetTransactions()
+  }, [])
 
   return (
     <div>
