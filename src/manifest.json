@@ -15,7 +15,7 @@
 
   "content_scripts": [
     {
-      "matches": ["https://moneyforward.com"],
+      "matches": ["https://moneyforward.com/"],
       "js": ["main.js"],
       "css": []
     }
