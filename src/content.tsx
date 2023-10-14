@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import React from 'react'
-import { setRootEl } from './lib/export'
+import { setRootEl } from './lib/site'
 import './styles/global.scss'
 import 'bootstrap'
 import MoneyApp from './containers/MoneyApp'
