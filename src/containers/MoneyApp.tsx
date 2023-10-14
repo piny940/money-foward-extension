@@ -21,7 +21,7 @@ const MoneyApp = (): JSX.Element => {
 
   return (
     <RootDiv className="bg-body root card p-3">
-      <h1>Money App</h1>
+      <h1>収支管理</h1>
       <Transactions
         transactions={transactions}
         addTransaction={addTransaction}
