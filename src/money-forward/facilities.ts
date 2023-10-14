@@ -27,7 +27,7 @@ class Facilities {
   }
 }
 
-class Banks extends Facilities {
+export class Banks extends Facilities {
   private TITLE = '銀行'
 
   constructor() {
@@ -50,14 +50,3 @@ const moneyStrToNum = (str: string) => {
   const numStr = str.replace(/[^0-9]/g, '')
   return parseInt(numStr)
 }
-
-export const _setRootEl = (): Element => {
-  const rootEl = document.createElement('div')
-  document.body.appendChild(rootEl)
-  return rootEl
-}
-
-export const _getBankMoney = (): number => {
-  return new Banks().getBankMoney()
-}
-console.log(_getBankMoney())
