@@ -15,7 +15,7 @@ const MoneyP = styled.p`
 
 const MoneyDisplay = ({ amount, title }: MoneyDisplayProps): JSX.Element => {
   return (
-    <div className="card p-3">
+    <div className="p-2">
       <h2 className="h5">{title}</h2>
       <MoneyP className="d-flex align-items-center">
         <input
