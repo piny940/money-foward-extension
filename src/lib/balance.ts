@@ -8,8 +8,8 @@ import { Transaction, TransactionInput } from './types'
 
 export class Balance {
   private SENT_MONEY_PER_MONTH = 40000
-  private EXCLUDE_BANK = 200000
-  private EXCLUDE_CASH = 70000
+  private EXCLUDED_BANK = 200000
+  private EXCLUDED_CASH = 70000
   private transactions: Transaction[]
 
   constructor(transactions: TransactionInput[]) {
@@ -23,7 +23,7 @@ export class Balance {
       getCashMoney() -
       this.getTransactionsMoney() -
       this.previousRestSentMoney()
-    return save - this.EXCLUDE_BANK - this.EXCLUDE_CASH
+    return save - this.EXCLUDED_BANK - this.EXCLUDED_CASH
   }
 
   getCurrentBalance = _getCurrentBalance
