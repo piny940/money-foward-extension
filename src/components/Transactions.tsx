@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, FormEventHandler } from 'react'
+import React from 'react'
 import { memo } from 'react'
 import styled from 'styled-components'
 import AddBankButton from './AddBankButton'
@@ -7,7 +7,7 @@ const BankInput = styled.input`
   font-size: 16px;
 `
 
-const Banks = (): JSX.Element => {
+const Transactions = (): JSX.Element => {
   const [transactions, setTransactions] = React.useState<string[]>([])
 
   const addTransaction = () => {
@@ -41,4 +41,4 @@ const Banks = (): JSX.Element => {
     </div>
   )
 }
-export default memo(Banks)
+export default memo(Transactions)
