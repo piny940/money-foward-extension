@@ -1,4 +1,4 @@
-import { Banks, CreditCards } from './facilities'
+import { Banks, Cash, CreditCards } from './facilities'
 import { moneyStrToNum } from './util'
 
 export const _setRootEl = (): Element => {
@@ -8,11 +8,15 @@ export const _setRootEl = (): Element => {
 }
 
 export const _getBankMoney = (): number => {
-  return new Banks().getBankMoney()
+  return new Banks().getMoneyAmount()
 }
 
 export const _getCreditCardMoney = (): number => {
-  return new CreditCards().getCreditCardMoney()
+  return new CreditCards().getMoneyAmount()
+}
+
+export const _getCashMoney = (): number => {
+  return new Cash().getMoneyAmount()
 }
 
 export const _getBalance = () => {
