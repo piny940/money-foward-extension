@@ -1,3 +1,5 @@
+import { moneyStrToNum } from './util'
+
 class Facilities {
   private facilityEls: Element[]
   private headEls: Element[]
@@ -15,9 +17,7 @@ class Facilities {
     Array.from(document.querySelectorAll('ul.facilities.accounts-list>li'))
 
   protected getContentEls = (title: string) => {
-    const titleEl = this.facilityEls.find((el) =>
-      el.textContent?.includes(title)
-    )
+    const titleEl = this.facilityEls.find((el) => el.textContent === title)
     if (!titleEl) return []
     const titleIdx = this.facilityEls.indexOf(titleEl)
     const titleIdxIdx = this.headIdxs.indexOf(titleIdx)
@@ -46,7 +46,22 @@ export class Banks extends Facilities {
   }
 }
 
-const moneyStrToNum = (str: string) => {
-  const numStr = str.replace(/[^0-9]/g, '')
-  return parseInt(numStr)
+export class CreditCards extends Facilities {
+  private TITLE = 'カード'
+
+  constructor() {
+    super()
+  }
+
+  getCreditCardMoney = () => {
+    const creditCardEls = this.getContentEls(this.TITLE)
+    console.log(creditCardEls)
+    const moneyEls = creditCardEls.map((el) =>
+      el.querySelector('ul.amount>li.number')
+    )
+    const moneyNums = moneyEls.map((el) =>
+      moneyStrToNum(el?.textContent ?? '0')
+    )
+    return moneyNums.reduce((acc, cur) => acc + cur, 0)
+  }
 }
