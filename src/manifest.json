@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Kokosuki stamp",
-  "short_name": "Kokosuki stamp",
-  "description": "Youtubeでタイムスタンプを自動生成します。",
+  "name": "Money Forward Extension",
+  "short_name": "Money Forward Extension",
+  "description": "マネーフォワードのサイトで貯金額などを計算します",
   "version": "0.1.1",
   "author": "いちごまかろん",
 
@@ -15,7 +15,7 @@
 
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/*"],
+      "matches": ["https://moneyforward.com"],
       "js": ["main.js"],
       "css": []
     }
