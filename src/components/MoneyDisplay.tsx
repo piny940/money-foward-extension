@@ -24,6 +24,7 @@ const MoneyDisplay = ({ amount, title }: MoneyDisplayProps): JSX.Element => {
           id=""
           className="form-control flex-shrink-1 me-2"
           value={amount}
+          disabled
         />
         円
       </MoneyP>
