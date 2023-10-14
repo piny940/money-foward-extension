@@ -26,7 +26,7 @@ export class Balance {
     return save - this.EXCLUDED_BANK - this.EXCLUDED_CASH
   }
 
-  getCurrentBalance = _getCurrentBalance
+  getCurrentBalance = () => _getCurrentBalance() + this.SENT_MONEY_PER_MONTH
 
   private restMonths = () => {
     const month = new Date().getMonth() + 1
