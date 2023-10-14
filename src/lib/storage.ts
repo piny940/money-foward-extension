@@ -1,7 +1,5 @@
-export const toStorage = async (key: string, value: any) => {
-  await chrome.storage.local.set({ [key]: value })
-}
+import { _fromStorage, _toStorage } from './_chrome'
 
-export const fromStorage = async (keys: string[]) => {
-  return await chrome.storage.local.get(keys)
-}
+export const toStorage = _toStorage
+
+export const fromStorage = _fromStorage
