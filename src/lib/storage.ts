@@ -1,9 +1,20 @@
-import { _fromStorage, _toStorage } from './_chrome'
+import { _fromStorage as fromChrome, _toStorage as toChrome } from './_chrome'
+import {
+  _toStorage as toFirebase,
+  _fromStorage as fromFirebase,
+} from './_firebase'
 import { TransactionInput } from './types'
 
-const toStorage = _toStorage
+const toStorage = (key: string, value: any) => {
+  toChrome(key, value)
+  toFirebase(key, value)
+}
 
-const fromStorage = _fromStorage
+const fromStorage = (key: string) => {
+  const firebaseData = fromFirebase(key)
+  if (firebaseData) return firebaseData
+  return fromChrome([key])
+}
 
 const getTransactionsKey = (year: number, month: number) => {
   const TRANSACTIONS_KEY = 'transactions'
@@ -18,6 +29,6 @@ export const saveTransactions = async (
 }
 export const loadTransactions = async (year: number, month: number) => {
   const key = getTransactionsKey(year, month)
-  const data = await fromStorage([key])
+  const data = await fromStorage(key)
   return data[key] as TransactionInput[]
 }
