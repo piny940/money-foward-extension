@@ -39,15 +39,17 @@ const MoneyApp = (): JSX.Element => {
             updateTransaction={updateTransaction}
           />
           {hasChanged && (
-            <p className="text-success small p-0 w-100 text-end">
+            <p className="text-success small m-0 w-100 text-end">
               保存しました
             </p>
           )}
-          <Balances
-            prevSave={prevSave}
-            currentBalance={current}
-            currentSave={prevSave + current}
-          />
+          <div className="mt-2">
+            <Balances
+              prevSave={prevSave}
+              currentBalance={current}
+              currentSave={prevSave + current}
+            />
+          </div>
         </>
       )}
     </RootDiv>
