@@ -16,6 +16,7 @@ const MoneyApp = (): JSX.Element => {
   const {
     transactions,
     isLoading,
+    hasChanged,
     addTransaction,
     deleteTransaction,
     updateTransaction,
@@ -37,6 +38,11 @@ const MoneyApp = (): JSX.Element => {
             deleteTransaction={deleteTransaction}
             updateTransaction={updateTransaction}
           />
+          {hasChanged && (
+            <p className="text-success small p-0 w-100 text-end">
+              保存しました
+            </p>
+          )}
           <Balances
             prevSave={prevSave}
             currentBalance={current}
