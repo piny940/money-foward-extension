@@ -28,30 +28,23 @@ const MoneyApp = (): JSX.Element => {
   return (
     <RootDiv className="bg-body root card p-3">
       <h1>収支管理</h1>
-      {isLoading ? (
-        <p>ロード中</p>
-      ) : (
-        <>
-          <Transactions
-            transactions={transactions}
-            addTransaction={addTransaction}
-            deleteTransaction={deleteTransaction}
-            updateTransaction={updateTransaction}
-          />
-          {hasChanged && (
-            <p className="text-success small m-0 w-100 text-end">
-              保存しました
-            </p>
-          )}
-          <div className="mt-2">
-            <Balances
-              prevSave={prevSave}
-              currentBalance={current}
-              currentSave={prevSave + current}
-            />
-          </div>
-        </>
+      {isLoading && <p>ロード中</p>}
+      <Transactions
+        transactions={transactions}
+        addTransaction={addTransaction}
+        deleteTransaction={deleteTransaction}
+        updateTransaction={updateTransaction}
+      />
+      {hasChanged && (
+        <p className="text-success small m-0 w-100 text-end">保存しました</p>
       )}
+      <div className="mt-2">
+        <Balances
+          prevSave={prevSave}
+          currentBalance={current}
+          currentSave={prevSave + current}
+        />
+      </div>
     </RootDiv>
   )
 }
