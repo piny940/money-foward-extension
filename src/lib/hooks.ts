@@ -5,6 +5,7 @@ import { loadTransactions, saveTransactions } from './storage'
 export const useTransactions = () => {
   const [year, month] = [new Date().getFullYear(), new Date().getMonth() + 1]
   const [transactions, setTransactions] = useState<TransactionInput[]>([])
+  const [isLoading, setIsLoading] = useState(true)
 
   const addTransaction = async () => {
     const nextId = transactions[transactions.length - 1]?.id + 1 || 0
@@ -28,11 +29,18 @@ export const useTransactions = () => {
   const loadSetTransactions = async () => {
     const loadedTransactions = (await loadTransactions(year, month)) || []
     setTransactions(loadedTransactions)
+    setIsLoading(false)
   }
 
   useEffect(() => {
     void loadSetTransactions()
   }, [])
 
-  return { transactions, addTransaction, deleteTransaction, updateTransaction }
+  return {
+    transactions,
+    isLoading,
+    addTransaction,
+    deleteTransaction,
+    updateTransaction,
+  }
 }
