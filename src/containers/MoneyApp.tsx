@@ -13,8 +13,13 @@ const RootDiv = styled.div`
 `
 
 const MoneyApp = (): JSX.Element => {
-  const { transactions, addTransaction, deleteTransaction, updateTransaction } =
-    useTransactions()
+  const {
+    transactions,
+    isLoading,
+    addTransaction,
+    deleteTransaction,
+    updateTransaction,
+  } = useTransactions()
   const balance = useMemo(() => new Balance(transactions), [transactions])
   const prevSave = useMemo(() => balance.getPreviousSave(), [balance])
   const current = useMemo(() => balance.getCurrentBalance(), [balance])
@@ -22,29 +27,35 @@ const MoneyApp = (): JSX.Element => {
   return (
     <RootDiv className="bg-body root card p-3">
       <h1>収支管理</h1>
-      <Transactions
-        transactions={transactions}
-        addTransaction={addTransaction}
-        deleteTransaction={deleteTransaction}
-        updateTransaction={updateTransaction}
-      />
-      <ul className="list-unstyled">
-        <li>
-          <MoneyDisplay amount={prevSave} title="先月までの貯金" />
-        </li>
-        <li>
-          <span className="h5 w-100 d-inline-block text-center">+</span>
-        </li>
-        <li>
-          <MoneyDisplay amount={current} title="今月の収支" />
-        </li>
-        <li>
-          <span className="h5 w-100 d-inline-block text-center">=</span>
-        </li>
-        <li>
-          <MoneyDisplay amount={prevSave + current} title="今月の貯金" />
-        </li>
-      </ul>
+      {isLoading ? (
+        <p>ロード中</p>
+      ) : (
+        <>
+          <Transactions
+            transactions={transactions}
+            addTransaction={addTransaction}
+            deleteTransaction={deleteTransaction}
+            updateTransaction={updateTransaction}
+          />
+          <ul className="list-unstyled">
+            <li>
+              <MoneyDisplay amount={prevSave} title="先月までの貯金" />
+            </li>
+            <li>
+              <span className="h5 w-100 d-inline-block text-center">+</span>
+            </li>
+            <li>
+              <MoneyDisplay amount={current} title="今月の収支" />
+            </li>
+            <li>
+              <span className="h5 w-100 d-inline-block text-center">=</span>
+            </li>
+            <li>
+              <MoneyDisplay amount={prevSave + current} title="今月の貯金" />
+            </li>
+          </ul>
+        </>
+      )}
     </RootDiv>
   )
 }
