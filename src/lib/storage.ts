@@ -5,9 +5,9 @@ import {
 } from './_firebase'
 import { TransactionInput } from './types'
 
-const toStorage = <T>(key: string, value: T) => {
-  toChrome(key, value)
-  toFirebase(key, value)
+const toStorage = async <T>(key: string, value: T) => {
+  await toChrome(key, value)
+  await toFirebase(key, value)
 }
 
 const fromStorage = async <T>(key: string): Promise<T | undefined> => {

@@ -25,7 +25,7 @@ const Transactions = ({
           <AddBankButton onClick={addTransaction} />
         </span>
       </h2>
-      <ul className="ps-0">
+      <ul className="ps-0 mb-0">
         {transactions.map((transaction) => (
           <li key={transaction.id} className="d-flex align-items-center mb-1">
             <TransactionItem

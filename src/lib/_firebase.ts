@@ -6,7 +6,7 @@ const app = initializeApp(config)
 const db = getDatabase(app)
 
 export const _toStorage = async <T>(key: string, value: T) => {
-  set(ref(db, key), value)
+  await set(ref(db, key), value)
 }
 
 export const _fromStorage = async <T>(key: string): Promise<T | undefined> => {
