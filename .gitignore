@@ -87,3 +87,4 @@ sketch
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,visualstudiocode,react
 
 dist
+.env
