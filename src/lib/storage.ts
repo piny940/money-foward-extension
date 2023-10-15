@@ -5,15 +5,15 @@ import {
 } from './_firebase'
 import { TransactionInput } from './types'
 
-const toStorage = (key: string, value: any) => {
+const toStorage = <T>(key: string, value: T) => {
   toChrome(key, value)
   toFirebase(key, value)
 }
 
-const fromStorage = (key: string) => {
-  const firebaseData = fromFirebase(key)
+const fromStorage = async <T>(key: string): Promise<T | undefined> => {
+  const firebaseData = await fromFirebase<T>(key)
   if (firebaseData) return firebaseData
-  return fromChrome([key])
+  return fromChrome<T>(key)
 }
 
 const getTransactionsKey = (year: number, month: number) => {
@@ -25,10 +25,13 @@ export const saveTransactions = async (
   month: number,
   transactions: TransactionInput[]
 ) => {
-  await toStorage(getTransactionsKey(year, month), transactions)
+  await toStorage<TransactionInput[]>(
+    getTransactionsKey(year, month),
+    transactions
+  )
 }
 export const loadTransactions = async (year: number, month: number) => {
   const key = getTransactionsKey(year, month)
-  const data = await fromStorage(key)
-  return data[key] as TransactionInput[]
+  const data = (await fromStorage<TransactionInput[]>(key)) || []
+  return data
 }
