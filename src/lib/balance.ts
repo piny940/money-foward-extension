@@ -1,5 +1,7 @@
 import {
-  _getCurrentBalance,
+  getCurrentBalance as _getCurrentBalance,
+  getCurrentExpense as _getCurrentExpense,
+  getCurrentIncome as _getCurrentIncome,
   getBankMoney,
   getCashMoney,
   getCreditCardMoney,
@@ -40,6 +42,8 @@ export class Balance {
   }
 
   getCurrentBalance = () => _getCurrentBalance() + this.SENT_MONEY_PER_MONTH
+  getCurrentIncome = () => _getCurrentIncome() + this.SENT_MONEY_PER_MONTH
+  getCurrentExpense = () => _getCurrentExpense()
 
   private restMonths = () => {
     const month = new Date().getMonth() + 1
