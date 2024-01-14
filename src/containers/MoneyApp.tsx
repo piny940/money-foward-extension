@@ -10,6 +10,7 @@ const RootDiv = styled.div`
   position: fixed;
   top: 50px;
   right: 30px;
+  width: 300px;
 `
 
 const MoneyApp = (): JSX.Element => {
@@ -24,6 +25,7 @@ const MoneyApp = (): JSX.Element => {
   const balance = useMemo(() => new Balance(transactions), [transactions])
   const prevSave = useMemo(() => balance.getPreviousSave(), [balance])
   const current = useMemo(() => balance.getCurrentBalance(), [balance])
+  const currentIncome = useMemo(() => balance.getCurrentIncome(), [balance])
 
   return (
     <RootDiv className="bg-body root card p-3">
@@ -42,6 +44,7 @@ const MoneyApp = (): JSX.Element => {
         <Balances
           prevSave={prevSave}
           currentBalance={current}
+          currentIncome={currentIncome}
           currentSave={prevSave + current}
         />
       </div>

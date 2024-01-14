@@ -19,6 +19,18 @@ export const _getCashMoney = (): number => {
   return new Cash().getMoneyAmount()
 }
 
+export const _getCurrentIncome = () => {
+  const tableEl = document.querySelector('table#monthly_total_table_home')
+  const row = tableEl?.querySelector('tbody tr:nth-child(1)')
+  const cell = row?.querySelector('td')
+  return moneyStrToNum(cell?.textContent ?? '0')
+}
+export const _getCurrentExpense = () => {
+  const tableEl = document.querySelector('table#monthly_total_table_home')
+  const row = tableEl?.querySelector('tbody tr:nth-child(2)')
+  const cell = row?.querySelector('td')
+  return moneyStrToNum(cell?.textContent ?? '0')
+}
 export const _getBalance = () => {
   const tableEl = document.querySelector('table#monthly_total_table_home')
   const row = tableEl?.querySelector('tbody tr:nth-child(3)')

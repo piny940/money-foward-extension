@@ -1,5 +1,7 @@
 import {
-  _getCurrentBalance,
+  getCurrentBalance as _getCurrentBalance,
+  getCurrentExpense as _getCurrentExpense,
+  getCurrentIncome as _getCurrentIncome,
   getBankMoney,
   getCashMoney,
   getCreditCardMoney,
@@ -17,6 +19,19 @@ export class Balance {
   }
 
   getPreviousSave = () => {
+    const bankMoney = getBankMoney()
+    const creditMoney = getCreditCardMoney()
+    const cashMoney = getCashMoney()
+    const transactionMoney = this.getTransactionsMoney()
+    const previousRestSentMoney = this.previousRestSentMoney()
+    console.log(`
+    先月までの貯金:
+      銀行: ${bankMoney} +
+      クレカ: ${creditMoney} +
+      現金: ${cashMoney} -
+      今月の銀行収支: ${transactionMoney} -
+      今月~3月の仕送り分差し引き: ${previousRestSentMoney}
+    `)
     const save =
       getBankMoney() +
       getCreditCardMoney() +
@@ -27,6 +42,8 @@ export class Balance {
   }
 
   getCurrentBalance = () => _getCurrentBalance() + this.SENT_MONEY_PER_MONTH
+  getCurrentIncome = () => _getCurrentIncome() + this.SENT_MONEY_PER_MONTH
+  getCurrentExpense = () => _getCurrentExpense()
 
   private restMonths = () => {
     const month = new Date().getMonth() + 1
