@@ -17,6 +17,19 @@ export class Balance {
   }
 
   getPreviousSave = () => {
+    const bankMoney = getBankMoney()
+    const creditMoney = getCreditCardMoney()
+    const cashMoney = getCashMoney()
+    const transactionMoney = this.getTransactionsMoney()
+    const previousRestSentMoney = this.previousRestSentMoney()
+    console.log(`
+    先月までの貯金:
+      銀行: ${bankMoney} +
+      クレカ: ${creditMoney} +
+      現金: ${cashMoney} -
+      今月の銀行収支: ${transactionMoney} -
+      今月~3月の仕送り分差し引き: ${previousRestSentMoney}
+    `)
     const save =
       getBankMoney() +
       getCreditCardMoney() +
