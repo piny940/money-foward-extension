@@ -71,7 +71,7 @@
     "react-dom": "^18.2.0",
     "react-is": "^18.0.0",
     "react-rnd": "^10.4.1",
-    "styled-components": "^5.3.6"
+    "styled-components": "^6.1.8"
   },
   "resolutions": {
     "styled-components": "^5"
