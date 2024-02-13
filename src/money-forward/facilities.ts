@@ -30,9 +30,12 @@ class Facilities {
   getMoneyAmount = () => {
     const detailEl = this.getContentEls(this.TITLE)
     const moneyEls = detailEl
-      .map((el) =>
-        Array.from(el.querySelectorAll('ul>li.number,ul>li.balance'))
-      )
+      .map((el) => {
+        const numberEl =
+          el.querySelectorAll('ul>li.number') ||
+          el.querySelectorAll('ul>li.balance')
+        return Array.from(numberEl)
+      })
       .flat()
     const moneyNums = moneyEls.map((el) =>
       moneyStrToNum(el?.textContent ?? '0')
