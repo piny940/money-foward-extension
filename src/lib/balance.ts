@@ -26,19 +26,23 @@ export class Balance {
     const previousRestSentMoney = this.previousRestSentMoney()
     console.log(`
     先月までの貯金:
-      銀行: ${bankMoney} +
-      クレカ: ${creditMoney} +
-      現金: ${cashMoney} -
-      今月の銀行収支: ${transactionMoney} -
-      今月~3月の仕送り分差し引き: ${previousRestSentMoney}
+      銀行: ${bankMoney}
+      + クレカ: ${creditMoney}
+      + 現金: ${cashMoney}
+      - 今月の銀行収支: ${transactionMoney}
+      - 今月~3月の仕送り分差し引き: ${previousRestSentMoney}
+      - 除外する銀行預金: ${this.EXCLUDED_BANK}
+      - 除外する現金: ${this.EXCLUDED_CASH}
     `)
     const save =
-      getBankMoney() +
-      getCreditCardMoney() +
-      getCashMoney() -
-      this.getTransactionsMoney() -
-      this.previousRestSentMoney()
-    return save - this.EXCLUDED_BANK - this.EXCLUDED_CASH
+      bankMoney +
+      creditMoney +
+      cashMoney -
+      transactionMoney -
+      previousRestSentMoney -
+      this.EXCLUDED_BANK -
+      this.EXCLUDED_CASH
+    return save
   }
 
   getCurrentBalance = () => _getCurrentBalance() + this.SENT_MONEY_PER_MONTH
