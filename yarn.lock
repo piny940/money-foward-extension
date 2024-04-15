@@ -6305,24 +6305,24 @@ re-resizable@6.9.6:
   dependencies:
     fast-memoize "^2.5.1"
 
-react-devtools-core@4.28.5:
-  version "4.28.5"
-  resolved "https://registry.yarnpkg.com/react-devtools-core/-/react-devtools-core-4.28.5.tgz#c8442b91f068cdf0c899c543907f7f27d79c2508"
-  integrity sha512-cq/o30z9W2Wb4rzBefjv5fBalHU0rJGZCHAkf/RHSBWSSYwh8PlQTqqOJmgIIbBtpj27T6FIPXeomIjZtCNVqA==
+react-devtools-core@5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/react-devtools-core/-/react-devtools-core-5.1.0.tgz#3396494ac94b21602cac4fd657d600e0b52f4a0b"
+  integrity sha512-NRtLBqYVLrIY+lOa2oTpFiAhI7Hru0AUXI0tP9neCyaPPAzlZyeH0i+VZ0shIyRTJbpvyqbD/uCsewA2hpfZHw==
   dependencies:
     shell-quote "^1.6.1"
     ws "^7"
 
-react-devtools@^4.28.5:
-  version "4.28.5"
-  resolved "https://registry.yarnpkg.com/react-devtools/-/react-devtools-4.28.5.tgz#4d82b467bb8a031a02b2c9b45ed7a62e386f663b"
-  integrity sha512-iVYraMxjfqpb+e1z3MrYIqdQABDgAZAR5wuSJwGMpxEYLC+XI/YJUbB3NlN1Wlq4s1ZvibfOtSckjnl2b3BL8Q==
+react-devtools@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/react-devtools/-/react-devtools-5.1.0.tgz#e43f113b96ebeb61dd8e2614601fdc7c8839b1b1"
+  integrity sha512-2jSyIO8caGXAgL1y8yVHgS7wF/0PVNv1tukMrHc0LYNyhk6afgINddUmDC8oerfH/+wJj+wKl2m/pIMTwZ8ZZg==
   dependencies:
     cross-spawn "^5.0.1"
     electron "^23.1.2"
     ip "^1.1.4"
     minimist "^1.2.3"
-    react-devtools-core "4.28.5"
+    react-devtools-core "5.1.0"
     update-notifier "^2.1.0"
 
 react-dom@^18.2.0:
