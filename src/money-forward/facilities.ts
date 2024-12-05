@@ -31,7 +31,7 @@ class Facilities {
     const detailEl = this.getContentEls(this.TITLE)
     const moneyEls = detailEl.map((el) => {
       const numberEl =
-        el.querySelector('ul>li.number') || el.querySelector('ul>li.balance')
+        el.querySelector('ul>li.balance') || el.querySelector('ul>li.number')
       return numberEl
     })
     const moneyNums = moneyEls.map((el) =>
