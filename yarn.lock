@@ -1362,10 +1362,10 @@
     "@types/node" "*"
     "@types/responselike" "^1.0.0"
 
-"@types/chrome@^0.0.217":
-  version "0.0.217"
-  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.217.tgz#144b534776ef87ce4121c404951ecc0e14051071"
-  integrity sha512-q8fLzCCoHiR9gYRoqvrx12+HaJjRTqUom5Ks/wLSR8Ac83qAqWaA4NgUBUcDjM1O1ACczygxIHCEENXs1zmbqQ==
+"@types/chrome@^0.0.293":
+  version "0.0.293"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.293.tgz#1494b081b91521d749d2a5e3602eae202729991a"
+  integrity sha512-pghCOLVHsnePWcMEHCxkAfMRx8qJWmj4lUoyF3ZpANniKz8AucIGLSld7smsrTdLUkk/p5JjOCGVDRdUDHx+uA==
   dependencies:
     "@types/filesystem" "*"
     "@types/har-format" "*"
