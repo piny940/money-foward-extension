@@ -1372,10 +1372,10 @@
     "@types/node" "*"
     "@types/responselike" "^1.0.0"
 
-"@types/chrome@^0.0.295":
-  version "0.0.295"
-  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.295.tgz#63e50faf69dd74aaa0246908bd5dc1a227f98168"
-  integrity sha512-6VSVRO4RvKLkP/OnPjpCjXiFgI+QsjZdujQ3s4sajexbS0+vOwaqBtgs9QZpCvy3fI6rnLYitn1brwxOGYSe4A==
+"@types/chrome@^0.0.296":
+  version "0.0.296"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.296.tgz#15141b7522c7c942aebd0dcf16e091400904c0a5"
+  integrity sha512-EWVcJlIXi2PzKfnzOXkIfySMFkdOQ6DiKkhbuHeuvTxOcVYeUBXbfiExSJ5EDS4M0gAChO/15tDHqMWP47muYw==
   dependencies:
     "@types/filesystem" "*"
     "@types/har-format" "*"
