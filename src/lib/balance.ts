@@ -10,7 +10,7 @@ import { Transaction, TransactionInput } from './types'
 
 export class Balance {
   private SENT_MONEY_PER_MONTH = 40000
-  private EXCLUDED_BANK = 34329 + 600000 // 34329: うっちーの金、600000: 仕送り分
+  private EXCLUDED_BANK = 600000 // 600000: 仕送り分
   private EXCLUDED_CASH = 70000
   private transactions: Transaction[]
 
