@@ -2,6 +2,7 @@ import {
   getCurrentBalance as _getCurrentBalance,
   getCurrentExpense as _getCurrentExpense,
   getCurrentIncome as _getCurrentIncome,
+  getOnlineShop,
   getBankMoney,
   getCashMoney,
   getCreditCardMoney,
@@ -17,12 +18,14 @@ export class Balance {
     const bankMoney = getBankMoney()
     const creditMoney = getCreditCardMoney()
     const cashMoney = getCashMoney()
+    const amazonMoney = getOnlineShop()
     const restSentMoney = this.restSentMoney()
     console.log(`
     今月の貯金:
       銀行: ${bankMoney}
       + クレカ: ${creditMoney}
       + 現金: ${cashMoney}
+      + Amazon: ${amazonMoney}
       - 来月~3月の仕送り分差し引き: ${restSentMoney}
       - 除外する銀行預金: ${this.EXCLUDED_BANK}
       - 除外する現金: ${this.EXCLUDED_CASH}
@@ -30,6 +33,7 @@ export class Balance {
     const save =
       bankMoney +
       creditMoney +
+      amazonMoney +
       cashMoney -
       restSentMoney -
       this.EXCLUDED_BANK -

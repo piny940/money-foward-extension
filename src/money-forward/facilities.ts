@@ -64,3 +64,11 @@ export class Cash extends Facilities {
     super()
   }
 }
+
+export class OnlineShop extends Facilities {
+  protected override TITLE = '通販'
+
+  constructor() {
+    super()
+  }
+}
