@@ -23,8 +23,8 @@ const MoneyApp = (): JSX.Element => {
     updateTransaction,
   } = useTransactions()
   const balance = useMemo(() => new Balance(transactions), [transactions])
-  const prevSave = useMemo(() => balance.getPreviousSave(), [balance])
-  const current = useMemo(() => balance.getCurrentBalance(), [balance])
+  const currentSave = useMemo(() => balance.getCurrentSave(), [balance])
+  const currentBalance = useMemo(() => balance.getCurrentBalance(), [balance])
   const currentIncome = useMemo(() => balance.getCurrentIncome(), [balance])
 
   return (
@@ -42,10 +42,10 @@ const MoneyApp = (): JSX.Element => {
       )}
       <div className="mt-2">
         <Balances
-          prevSave={prevSave}
-          currentBalance={current}
+          prevSave={currentSave - currentBalance}
+          currentBalance={currentBalance}
           currentIncome={currentIncome}
-          currentSave={prevSave + current}
+          currentSave={currentSave}
         />
       </div>
     </RootDiv>
