@@ -28,16 +28,19 @@ class Facilities {
   }
 
   getMoneyAmount = () => {
-    const detailEl = this.getContentEls(this.TITLE)
-    const moneyEls = detailEl.map((el) => {
-      const numberEl =
-        el.querySelector('ul>li.balance') || el.querySelector('ul>li.number')
-      return numberEl
+    const detailEls = this.getContentEls(this.TITLE)
+    const moneys = detailEls.map((el) => {
+      const numberEls = el.querySelectorAll(
+        'ul>li.balance, ul>li.number, ul>li.point'
+      )
+      let sum = 0
+      for (const el of numberEls) {
+        const money = moneyStrToNum(el.textContent ?? '0')
+        sum += money
+      }
+      return sum
     })
-    const moneyNums = moneyEls.map((el) =>
-      moneyStrToNum(el?.textContent ?? '0')
-    )
-    return moneyNums.reduce((acc, cur) => acc + cur, 0)
+    return moneys.reduce((acc, cur) => acc + cur, 0)
   }
 }
 
