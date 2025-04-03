@@ -1,4 +1,4 @@
-import { Banks, Cash, CreditCards } from './facilities'
+import { OnlineShop, Banks, Cash, CreditCards, Prepaid } from './facilities'
 import { moneyStrToNum } from './util'
 
 export const _setRootEl = (): Element => {
@@ -17,6 +17,14 @@ export const _getCreditCardMoney = (): number => {
 
 export const _getCashMoney = (): number => {
   return new Cash().getMoneyAmount()
+}
+
+export const _getPrepaidMoney = (): number => {
+  return new Prepaid().getMoneyAmount()
+}
+
+export const _getOnlineShop = (): number => {
+  return new OnlineShop().getMoneyAmount()
 }
 
 export const _getCurrentIncome = () => {

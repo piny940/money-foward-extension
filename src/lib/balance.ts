@@ -2,9 +2,11 @@ import {
   getCurrentBalance as _getCurrentBalance,
   getCurrentExpense as _getCurrentExpense,
   getCurrentIncome as _getCurrentIncome,
+  getOnlineShop,
   getBankMoney,
   getCashMoney,
   getCreditCardMoney,
+  getPrepaidMoney,
 } from './site'
 
 export class Balance {
@@ -17,12 +19,16 @@ export class Balance {
     const bankMoney = getBankMoney()
     const creditMoney = getCreditCardMoney()
     const cashMoney = getCashMoney()
+    const prepaidMoney = getPrepaidMoney()
+    const onlineShopMoney = getOnlineShop()
     const restSentMoney = this.restSentMoney()
     console.log(`
     今月の貯金:
       銀行: ${bankMoney}
       + クレカ: ${creditMoney}
       + 現金: ${cashMoney}
+      + 電子マネー・プリペイド: ${prepaidMoney}
+      + 通販: ${onlineShopMoney}
       - 来月~3月の仕送り分差し引き: ${restSentMoney}
       - 除外する銀行預金: ${this.EXCLUDED_BANK}
       - 除外する現金: ${this.EXCLUDED_CASH}
@@ -30,6 +36,8 @@ export class Balance {
     const save =
       bankMoney +
       creditMoney +
+      prepaidMoney +
+      onlineShopMoney +
       cashMoney -
       restSentMoney -
       this.EXCLUDED_BANK -
