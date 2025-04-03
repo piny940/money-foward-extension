@@ -65,6 +65,14 @@ export class Cash extends Facilities {
   }
 }
 
+export class Prepaid extends Facilities {
+  protected override TITLE = '電子マネー・プリペイド'
+
+  constructor() {
+    super()
+  }
+}
+
 export class OnlineShop extends Facilities {
   protected override TITLE = '通販'
 
