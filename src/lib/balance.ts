@@ -6,31 +6,24 @@ import {
   getCashMoney,
   getCreditCardMoney,
 } from './site'
-import { Transaction, TransactionInput } from './types'
 
 export class Balance {
   private SENT_MONEY_PER_MONTH = 40000
   private EXCLUDED_BANK = 0
   private EXCLUDED_CASH = 70000
-  private transactions: Transaction[]
 
-  constructor(transactions: TransactionInput[]) {
-    this.transactions = this.toTransactions(transactions)
-  }
-
-  getPreviousSave = () => {
+  // 今月の貯金
+  getCurrentSave = () => {
     const bankMoney = getBankMoney()
     const creditMoney = getCreditCardMoney()
     const cashMoney = getCashMoney()
-    const transactionMoney = this.getTransactionsMoney()
-    const previousRestSentMoney = this.previousRestSentMoney()
+    const restSentMoney = this.restSentMoney()
     console.log(`
-    先月までの貯金:
+    今月の貯金:
       銀行: ${bankMoney}
       + クレカ: ${creditMoney}
       + 現金: ${cashMoney}
-      - 今月の銀行収支: ${transactionMoney}
-      - 今月~3月の仕送り分差し引き: ${previousRestSentMoney}
+      - 来月~3月の仕送り分差し引き: ${restSentMoney}
       - 除外する銀行預金: ${this.EXCLUDED_BANK}
       - 除外する現金: ${this.EXCLUDED_CASH}
     `)
@@ -38,32 +31,19 @@ export class Balance {
       bankMoney +
       creditMoney +
       cashMoney -
-      transactionMoney -
-      previousRestSentMoney -
+      restSentMoney -
       this.EXCLUDED_BANK -
       this.EXCLUDED_CASH
     return save
   }
-
-  getCurrentBalance = () => _getCurrentBalance() + this.SENT_MONEY_PER_MONTH
-  getCurrentIncome = () => _getCurrentIncome() + this.SENT_MONEY_PER_MONTH
-  getCurrentExpense = () => _getCurrentExpense()
+  getCurrentBalance = () => _getCurrentBalance() + this.SENT_MONEY_PER_MONTH // 今月の収支
+  getCurrentIncome = () => _getCurrentIncome() + this.SENT_MONEY_PER_MONTH // 今月の収入
+  getCurrentExpense = () => _getCurrentExpense() // 今月の支出
 
   private restMonths = () => {
     const month = new Date().getMonth() + 1
     return (15 - month) % 12
   }
 
-  private previousRestSentMoney = () =>
-    this.SENT_MONEY_PER_MONTH * (this.restMonths() + 1)
-
-  private toTransactions = (transactions: TransactionInput[]) => {
-    return transactions.map((trans) => ({
-      id: trans.id,
-      amount: parseInt(trans.amount) || 0,
-    }))
-  }
-  private getTransactionsMoney = () => {
-    return this.transactions.reduce((acc, cur) => acc + cur.amount, 0)
-  }
+  private restSentMoney = () => this.SENT_MONEY_PER_MONTH * this.restMonths()
 }
