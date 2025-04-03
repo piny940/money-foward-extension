@@ -2,8 +2,6 @@ import React, { useMemo } from 'react'
 import { memo } from 'react'
 import styled from 'styled-components'
 import { Balance } from '../lib/balance'
-import Transactions from '../components/Transactions'
-import { useTransactions } from '../lib/hooks'
 import Balances from '../components/Balances'
 
 const RootDiv = styled.div`
@@ -14,15 +12,7 @@ const RootDiv = styled.div`
 `
 
 const MoneyApp = (): JSX.Element => {
-  const {
-    transactions,
-    isLoading,
-    hasChanged,
-    addTransaction,
-    deleteTransaction,
-    updateTransaction,
-  } = useTransactions()
-  const balance = useMemo(() => new Balance(transactions), [transactions])
+  const balance = useMemo(() => new Balance(), [])
   const currentSave = useMemo(() => balance.getCurrentSave(), [balance])
   const currentBalance = useMemo(() => balance.getCurrentBalance(), [balance])
   const currentIncome = useMemo(() => balance.getCurrentIncome(), [balance])
@@ -30,16 +20,6 @@ const MoneyApp = (): JSX.Element => {
   return (
     <RootDiv className="bg-body root card p-3">
       <h1>収支管理</h1>
-      <Transactions
-        transactions={transactions}
-        addTransaction={addTransaction}
-        deleteTransaction={deleteTransaction}
-        updateTransaction={updateTransaction}
-      />
-      {isLoading && <p>ロード中</p>}
-      {hasChanged && (
-        <p className="text-success small m-0 w-100 text-end">保存しました</p>
-      )}
       <div className="mt-2">
         <Balances
           prevSave={currentSave - currentBalance}
