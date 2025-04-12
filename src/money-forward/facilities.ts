@@ -30,12 +30,12 @@ class Facilities {
   getMoneyAmount = () => {
     const detailEls = this.getContentEls(this.TITLE)
     const moneys = detailEls.map((el) => {
-      const numberEls = el.querySelectorAll(
-        'ul>li.balance, ul>li.number, ul>li.point'
-      )
+      const balanceEl =
+        el.querySelector('ul>li.balance') || el.querySelector('ul>li.number')
+      const pointEl = el.querySelector('ul>li.point')
       let sum = 0
-      for (const el of numberEls) {
-        const money = moneyStrToNum(el.textContent ?? '0')
+      for (const el of [balanceEl, pointEl]) {
+        const money = moneyStrToNum(el?.textContent ?? '0')
         sum += money
       }
       return sum
