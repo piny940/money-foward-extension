@@ -1,24 +1,17 @@
 import React, { memo } from 'react'
-import styled from 'styled-components'
 
 export type MoneyDisplayProps = {
   amount: number
   title: string
 }
-const MoneyP = styled.p`
-  font-size: 18px;
-
-  input {
-    font-size: 18px;
-  }
-`
 
 const MoneyDisplay = ({ amount, title }: MoneyDisplayProps): JSX.Element => {
   return (
     <div className="p-2">
       <h2 className="h5">{title}</h2>
-      <MoneyP className="d-flex align-items-center">
+      <p style={{ fontSize: '18px' }} className="d-flex align-items-center">
         <input
+          style={{ fontSize: '18px' }}
           type="text"
           name="previous"
           id=""
@@ -27,7 +20,7 @@ const MoneyDisplay = ({ amount, title }: MoneyDisplayProps): JSX.Element => {
           disabled
         />
         円
-      </MoneyP>
+      </p>
     </div>
   )
 }
