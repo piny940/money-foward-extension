@@ -1532,10 +1532,10 @@
     "@types/node" "*"
     "@types/responselike" "^1.0.0"
 
-"@types/chrome@^0.0.307":
-  version "0.0.307"
-  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.307.tgz#dd97b3d399524809e12ef3e8a781e287f221c071"
-  integrity sha512-IHqsTT+JT6vlFTcRWaih7saaEYhFCT13KRgRIRFKjXYOG3g0ummwXAGKtaxK9Zzz6yYsYvbEut91exTX0F/xSg==
+"@types/chrome@^0.0.315":
+  version "0.0.315"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.315.tgz#3d315d996c31ec5cef53c726ce2f893187ce8710"
+  integrity sha512-Oy1dYWkr6BCmgwBtOngLByCHstQ3whltZg7/7lubgIZEYvKobDneqplgc6LKERNRBwckFviV4UU5AZZNUFrJ4A==
   dependencies:
     "@types/filesystem" "*"
     "@types/har-format" "*"
