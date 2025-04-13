@@ -20,8 +20,8 @@
   },
   "devDependencies": {
     "@testing-library/cypress": "^10.0.1",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^14.1.0",
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^16.0.0",
     "@types/bootstrap": "^5.2.6",
     "@types/chrome": "^0.0.315",
     "@types/jest": "^29.5.12",
