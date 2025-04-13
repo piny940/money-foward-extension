@@ -50,7 +50,7 @@
     "rimraf": "^6.0.0",
     "sass": "^1.69.5",
     "sass-loader": "^16.0.0",
-    "style-loader": "^3.3.4",
+    "style-loader": "^4.0.0",
     "ts-jest": "^29.0.5",
     "ts-loader": "^9.5.1",
     "ts-mockery": "^1.2.0",
