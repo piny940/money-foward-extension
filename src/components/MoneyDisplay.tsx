@@ -1,9 +1,6 @@
-import React, { memo } from 'react'
+import React, { memo, JSX } from 'react'
 
-export type MoneyDisplayProps = {
-  amount: number
-  title: string
-}
+export type MoneyDisplayProps = { amount: number; title: string }
 
 const MoneyDisplay = ({ amount, title }: MoneyDisplayProps): JSX.Element => {
   return (

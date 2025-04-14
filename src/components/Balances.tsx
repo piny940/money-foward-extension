@@ -1,4 +1,4 @@
-import React, { CSSProperties, memo, useMemo } from 'react'
+import React, { CSSProperties, memo, useMemo, JSX } from 'react'
 import MoneyDisplay from './MoneyDisplay'
 
 export type BalancesProps = {
@@ -15,10 +15,7 @@ const Balances = ({
   currentSave,
 }: BalancesProps): JSX.Element => {
   const minusSpanStyle: CSSProperties = useMemo(
-    () => ({
-      marginTop: '-60px',
-      marginBottom: '-20px',
-    }),
+    () => ({ marginTop: '-60px', marginBottom: '-20px' }),
     []
   )
   return (
