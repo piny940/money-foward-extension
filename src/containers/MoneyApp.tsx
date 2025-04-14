@@ -1,4 +1,4 @@
-import React, { CSSProperties, useMemo } from 'react'
+import React, { CSSProperties, useMemo, JSX } from 'react'
 import { memo } from 'react'
 import { Balance } from '../lib/balance'
 import Balances from '../components/Balances'
@@ -9,12 +9,7 @@ const MoneyApp = (): JSX.Element => {
   const currentBalance = useMemo(() => balance.getCurrentBalance(), [balance])
   const currentIncome = useMemo(() => balance.getCurrentIncome(), [balance])
   const rootStyle: CSSProperties = useMemo(
-    () => ({
-      position: 'fixed',
-      top: '50px',
-      right: '30px',
-      width: '300px',
-    }),
+    () => ({ position: 'fixed', top: '50px', right: '30px', width: '300px' }),
     []
   )
 
