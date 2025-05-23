@@ -10,7 +10,7 @@ import {
 } from './site'
 
 export class Balance {
-  private SENT_MONEY_PER_MONTH = 40000
+  private SENT_MONEY_PER_MONTH = 50000
   private EXCLUDED_BANK = 0
   private EXCLUDED_CASH = 70000
 
