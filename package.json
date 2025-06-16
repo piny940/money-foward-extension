@@ -24,7 +24,7 @@
     "@testing-library/react": "^16.0.0",
     "@types/bootstrap": "^5.2.6",
     "@types/chrome": "^0.0.326",
-    "@types/jest": "^29.5.12",
+    "@types/jest": "^30.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
