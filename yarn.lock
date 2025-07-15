@@ -7610,10 +7610,10 @@ ts-loader@^9.5.1:
     semver "^7.3.4"
     source-map "^0.7.4"
 
-ts-mockery@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/ts-mockery/-/ts-mockery-1.2.0.tgz#aa76521653d729e99b3808836817f64e61a213dd"
-  integrity sha512-ArGPMUzO4H25KBYVTWmmE36y5bCOFAwC7XdW4CLTqYg+gQcvxJzKoj5URSc+luzwI8QdtwAkHtazBmrKepX81g==
+ts-mockery@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ts-mockery/-/ts-mockery-2.0.0.tgz#a29c05b073ed13ee1421f4a827dc2fe26c260249"
+  integrity sha512-6MSVatOSBIRFODTG4BtQTgY8xz4eG9Grxb7M2h7yXyrRwS2YFA5GVDK3L+9BntBWZSqNy57aNgjor/tLv+rNnA==
 
 tslib@2.6.2:
   version "2.6.2"
