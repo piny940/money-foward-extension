@@ -1575,9 +1575,9 @@
     "@types/responselike" "^1.0.0"
 
 "@types/chrome@^0.1.0":
-  version "0.1.29"
-  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.1.29.tgz#4fd73361b86a880d61f0207a8a57370f64b813ad"
-  integrity sha512-AMEjLNCFjLWEqXJNbSgZk9+kaC8SX0FOCd46ZZqE2IaCzmeRGbFEhCEbhoV6kzale+WqSeiiqjHgA7Q31shdoA==
+  version "0.1.31"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.1.31.tgz#e8d1e7e614d5ee97db208fe843e46bc6ccdee0f0"
+  integrity sha512-8fC9t02LRdqlSQ9bktaiLjP0NKujPNPaCKPfXxfIjZ35A9u831XY0pt0UEf2oup2SjcUEAaIYOB8mzJ51jhjmA==
   dependencies:
     "@types/filesystem" "*"
     "@types/har-format" "*"
