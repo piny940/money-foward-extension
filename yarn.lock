@@ -1670,7 +1670,14 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-5.1.2.tgz#07508b45797cb81ec3f273011b054cd0755eddca"
   integrity sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==
 
-"@types/node@*", "@types/node@>=12.12.47", "@types/node@>=13.7.0":
+"@types/node@*":
+  version "25.0.8"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-25.0.8.tgz#e54e00f94fe1db2497b3e42d292b8376a2678c8d"
+  integrity sha512-powIePYMmC3ibL0UJ2i2s0WIbq6cg6UyVFQxSCpaPxxzAaziRfimGivjdF943sSGV6RADVbk0Nvlm5P/FB44Zg==
+  dependencies:
+    undici-types "~7.16.0"
+
+"@types/node@>=12.12.47", "@types/node@>=13.7.0":
   version "25.0.3"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-25.0.3.tgz#79b9ac8318f373fbfaaf6e2784893efa9701f269"
   integrity sha512-W609buLVRVmeW693xKfzHeIV6nJGGz98uCPfeXI1ELMLXVeKYZ9m15fAMSaUPBHYLGFsVRcMmSCksQOrZV9BYA==
@@ -3092,9 +3099,9 @@ csstype@^3.2.2:
   integrity sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==
 
 cypress@^15.0.0:
-  version "15.8.2"
-  resolved "https://registry.yarnpkg.com/cypress/-/cypress-15.8.2.tgz#685d6e090b1c5f76cb5430eafa21f63b1eded0a6"
-  integrity sha512-KGpuiE8o9l9eyVLPkig574t8zOXkEDKzI0a+RQwy4cfXzpaLipvTOv0t+QEEkLiw/8HbgMNZ0fbPKakJAB3USA==
+  version "15.9.0"
+  resolved "https://registry.yarnpkg.com/cypress/-/cypress-15.9.0.tgz#9bcbbfbf3923d8aca7d06990cb174d5ba67e4084"
+  integrity sha512-Ks6Bdilz3TtkLZtTQyqYaqtL/WT3X3APKaSLhTV96TmTyudzSjc6EJsJCHmBb7DxO+3R12q3Jkbjgm/iPgmwfg==
   dependencies:
     "@cypress/request" "^3.0.10"
     "@cypress/xvfb" "^1.2.4"
@@ -7381,9 +7388,9 @@ synckit@^0.11.8:
     "@pkgr/core" "^0.2.9"
 
 systeminformation@^5.27.14:
-  version "5.30.2"
-  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.30.2.tgz#8944354f86a6a37660817fa478086903ed2db727"
-  integrity sha512-Rrt5oFTWluUVuPlbtn3o9ja+nvjdF3Um4DG0KxqfYvpzcx7Q9plZBTjJiJy9mAouua4+OI7IUGBaG9Zyt9NgxA==
+  version "5.30.3"
+  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.30.3.tgz#33ae9abbc563470975de3dc9866f7e7e97d55238"
+  integrity sha512-NgHJUpA+y7j4asLQa9jgBt+Eb2piyQIXQ+YjOyd2K0cHNwbNJ6I06F5afOqOiaCuV/wrEyGrb0olg4aFLlJD+A==
 
 tapable@^2.2.0, tapable@^2.3.0:
   version "2.3.0"
