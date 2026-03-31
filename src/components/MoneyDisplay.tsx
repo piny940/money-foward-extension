@@ -13,7 +13,7 @@ const MoneyDisplay = ({ amount, title }: MoneyDisplayProps): JSX.Element => {
           name="previous"
           id=""
           className="form-control flex-shrink-1 me-2"
-          value={amount}
+          value={amount.toLocaleString()}
           disabled
         />
         円
