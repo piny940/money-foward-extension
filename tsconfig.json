@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
+    "module": "Node16",
     "jsx": "react",
-    "lib": ["dom", "esnext", "dom.iterable"],
+    "lib": [
+      "dom",
+      "esnext",
+      "dom.iterable"
+    ],
     "target": "ESNext",
     "allowJs": false,
     "skipLibCheck": true,
@@ -10,11 +15,22 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
     "resolveJsonModule": true,
     "noEmit": false,
-    "types": ["chrome", "node", "jest"]
+    "types": [
+      "chrome",
+      "node",
+      "jest"
+    ]
   },
-  "include": ["*.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["dist", "node_modules"]
+  "include": [
+    "*.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
 }
