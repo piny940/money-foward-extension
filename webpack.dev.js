@@ -5,6 +5,6 @@ module.exports = () => {
   return merge(common, {
     mode: 'development',
     devtool: 'cheap-module-source-map',
-    entry: ['react-devtools', './src/content.tsx'],
+    entry: ['./src/content.tsx'],
   })
 }
