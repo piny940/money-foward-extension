@@ -2433,10 +2433,10 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-bestzip@^2.2.1:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/bestzip/-/bestzip-2.2.5.tgz#bb71600803f0434cda88161c3f5de82a7f5e5434"
-  integrity sha512-3c+7j24mW+Si8rNKe9rDQEaCBI/ECRlNIU1rBLlqIt2zjBsakVqHxpLySMToM/JTGmfXfqBpr2okkfBxARkwRw==
+bestzip@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/bestzip/-/bestzip-3.0.0.tgz#fbc3478faf2fa943c529c7065d123d7b5966d722"
+  integrity sha512-gYyBQyqEkgfZWwCwLk/hYMF0Ky9nqO2uW6n9Hz37KqGtBGJk8STjWT6k5rQrJ2O4Y3jGiW54QG2vDgVNim6Izw==
   dependencies:
     archiver "^7.0.1"
     glob "^13.0.6"
