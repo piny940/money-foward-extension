@@ -2429,14 +2429,14 @@ balanced-match@^4.0.2:
   integrity sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA==
 
 bare-events@^2.5.4, bare-events@^2.7.0:
-  version "2.9.1"
-  resolved "https://registry.yarnpkg.com/bare-events/-/bare-events-2.9.1.tgz#5c86616966343bcb03a1b3155feab253eadbf349"
-  integrity sha512-Z0oHEHAFDZkffN8Qc39zNZjQlMDkPJRyyyZieU1VH7u8c5S+qHZ2S8ixdKIAxEjfHO7FJxXmJWgteOghVanIsg==
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/bare-events/-/bare-events-2.9.2.tgz#01d377b64c3c7167b28b52da7add3221aecf2d7f"
+  integrity sha512-AIPKioV7/Y/8KfZ3AAhjPJxLLbY49S64Ym5DakZlUg75qQiTgUq9hEJoEwa4eUezPUlXRy/i5NpsKvo9jgKmoA==
 
 bare-fs@^4.5.5:
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/bare-fs/-/bare-fs-4.8.0.tgz#8c0f916833ae11e6d9d347f9e0a7f46f7375bb8f"
-  integrity sha512-fM+MhCvdQhZ7NV6S95a07gPSqjIYKn6mFaXfx266wN3ajZGl/+1AzH+ubkXQ0fFZvOe2nk9VHkzdYkQE5zMV3Q==
+  version "4.8.1"
+  resolved "https://registry.yarnpkg.com/bare-fs/-/bare-fs-4.8.1.tgz#1a946560b45844dc37120c00330eae7c8a1c44cf"
+  integrity sha512-N1nnXdHZAOSstz0XiHikGS4HGMH4CnSwhqWdGQQMqqdvp4Jybm9sE3R1WVnpWVd4SFkc8ryPDBLViNLwiEqECg==
   dependencies:
     bare-events "^2.5.4"
     bare-path "^3.0.0"
@@ -2450,18 +2450,18 @@ bare-path@^3.0.0:
   integrity sha512-JprUlveX3QjApC1cTpsUOiscADftCGVWkzitbHsRqv84hzYwYHw2mbluddsq5TvI8mH/8Ov1f4BiMAdcB0oYnQ==
 
 bare-stream@^2.6.4:
-  version "2.13.3"
-  resolved "https://registry.yarnpkg.com/bare-stream/-/bare-stream-2.13.3.tgz#f6186c7cbb4bbf53a4560f35e48b16373ba51ce6"
-  integrity sha512-Kc+brLqvEqGkjyfiwJmImAOqLZL7OsoLKuavx+hJjgVV3nLTOjloJyPMFxjUPerGGHrNH0fLU06jjykMLWrERQ==
+  version "2.13.4"
+  resolved "https://registry.yarnpkg.com/bare-stream/-/bare-stream-2.13.4.tgz#61d448a268d1efd992103aae6bd729332f278ac0"
+  integrity sha512-PcrQ8lVLbiJscNm1Kez+Yp4Gy4AHGcN1lzwjvf5NybWen7VvEgUfyfnXYJ2zNqWnzOfCb1Abq6lH8ti0syQszA==
   dependencies:
     b4a "^1.8.1"
     streamx "^2.25.0"
     teex "^1.0.1"
 
 bare-url@^2.2.2:
-  version "2.4.7"
-  resolved "https://registry.yarnpkg.com/bare-url/-/bare-url-2.4.7.tgz#e1fb1ba891d58bebc6bec6b3fcbdf9898bd963b8"
-  integrity sha512-o8CRCiJtib+ycO3mE4A5UChtGX4dDP2XxsWVu9P+Zc3H8tcmKwNVEDoDTXmwN+uuMhfKeT7/i7Y26xS8W7ohoA==
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/bare-url/-/bare-url-2.5.2.tgz#e8dafaefbdb56891a0fbc2b0e1c051296d241cd6"
+  integrity sha512-L13PCJzKG8RGvx8V1/DdMi12ERhC3tprr7/8a94BxpmnRsFqxh5XZNdhtMxu5HPkRshYOOWRGY8lDP7ZhpG9Cg==
   dependencies:
     bare-path "^3.0.0"
 
@@ -2488,9 +2488,9 @@ bcrypt-pbkdf@^1.0.0:
     tweetnacl "^0.14.3"
 
 bestzip@^3.0.0:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/bestzip/-/bestzip-3.0.2.tgz#400d47aa86f9b48a93db97fe9dad9824258fc7c7"
-  integrity sha512-Zxl7GRh4HQdR4KD/WS+CBrN2aVIs8wa+ozSLrISyxVNG7kl/nragWeHL3vZRfF+UGWO707WjRjboN9CoPBl5kg==
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/bestzip/-/bestzip-3.0.3.tgz#9f7359399f0f7f7399a8afa0479a77bfa2129cff"
+  integrity sha512-3UpGCm+bn1uGuPD0ro2d+jFL7wG+632Lo710L6VmJVubxsw3ED0QrDqH+jxktPg8b+0e92cYO6J2zC5FJ2gyvw==
   dependencies:
     archiver "^8.0.0"
     glob "^13.0.6"
@@ -6467,9 +6467,9 @@ stack-utils@^2.0.6:
     escape-string-regexp "^2.0.0"
 
 streamx@^2.12.5, streamx@^2.15.0, streamx@^2.25.0:
-  version "2.28.0"
-  resolved "https://registry.yarnpkg.com/streamx/-/streamx-2.28.0.tgz#035ab56057b7ed2211b51d532e6973f0f99fbf11"
-  integrity sha512-1Yowhzjf0ivGMrTIkY9hav5TxobO9qIVqUE41fiCGMGgc3CLlf4MY+9AHmZqBWgDTue0fY9zWjYFVyf6Diuobw==
+  version "2.28.1"
+  resolved "https://registry.yarnpkg.com/streamx/-/streamx-2.28.1.tgz#376cd42a089505a69bec0efdb5189aa45586141f"
+  integrity sha512-zEzXb0s5Cds7tqMH6rhZ05lcJydCWiQPEwiNngVqzsxCc962vLY4Uw+mW7od8kDH258k2Uz/JrOkdIAAhSh9VA==
   dependencies:
     events-universal "^1.0.0"
     fast-fifo "^1.3.2"
@@ -6690,9 +6690,9 @@ tapable@^2.3.0, tapable@^2.3.3:
   integrity sha512-uxc/zpqFg6x7C8vOE7lh6Lbda8eEL9zmVm/PLeTPBRhh1xCgdWaQ+J1CUieGpIfm2HdtsUpRv+HshiasBMcc6A==
 
 tar-stream@^3.0.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/tar-stream/-/tar-stream-3.2.0.tgz#0d0064d9b67ea3c9f5abde155e35faab0df37591"
-  integrity sha512-ojzvCvVaNp6aOTFmG7jaRD0meowIAuPc3cMMhSgKiVWws1GyHbGd/xvnyuRKcKlMpt3qvxx6r0hreCNITP9hIg==
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/tar-stream/-/tar-stream-3.2.1.tgz#952d72f7aba68ce5cb802ef2e0b19f1bd989140d"
+  integrity sha512-nqsEO8zLZJvrOMdEwkA0QdCLFbetHMn95Zqu4fKwX+hkaTWJPZZOrxx/PwtxoK0MMGQmBQNRW3CPs8IFYQz4cQ==
   dependencies:
     b4a "^1.6.4"
     bare-fs "^4.5.5"
