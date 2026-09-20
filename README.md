@@ -1,48 +1,53 @@
-# Kokosuki stamp
+# Money Forward Extension
 
-## chromeウェブストア
-
-https://chrome.google.com/webstore/detail/kokosuki-stamp/pnbpecefaimbeadmmombelidgkkgfeeg?hl=ja
-
-Youtubeのコメント欄でタイムスタンプを作成するのを支援するchrome拡張機能です。
+マネーフォワード ME のトップページに、現在の貯金額と今月の収支をまとめたパネルを重ねて表示する Chrome 拡張機能です。
 
 ## 機能
 
-YouTubeのタイムスタンプ作成支援ツールです。コメントや概要欄で時間指定する時に使用します。
+- `https://moneyforward.com/` を開くと、画面右上に「収支管理」パネルを表示します。
+- 口座一覧（銀行・カード・現金・電子マネー/プリペイド・通販）の残高を合算して、現時点の貯金額を算出します。
+- 「先月までの貯金 + (今月の収入 - 今月の支出) = 今月の貯金」という内訳で金額を表示します。
+
+集計ロジックは [src/lib/balance.ts](src/lib/balance.ts) にあります。毎月の仕送り額や集計から除外する金額は作者個人の値がハードコードされているため、使う際はこのファイルの定数を直接書き換えてください。
 
 ## 使い方
 
-「+」ボタンをクリックするとその時点での動画・配信の経過時間が記録されます。
+1. 下記の手順でビルドし、`dist/` を生成します。
+2. Chrome で `chrome://extensions` を開き、デベロッパーモードを ON にします。
+3. 「パッケージ化されていない拡張機能を読み込む」から `dist/` を選択します。
+4. `https://moneyforward.com/` を開くとパネルが表示されます。
 
-「メモを入力」という欄にメモを書いた状態でプラスボタンを押すと、タイムスタンプにメモを残すことができます。このメモはタイムスタンプ作成後も下のリストから編集することができます。
+## 開発
 
-「オフセット」はタイムスタンプを押した時点での動画・配信の経過時間と実際にタイムスタンプに記録される時間の差を表しています。例えばオフセットが-4の場合、動画の19:24時点でタイムスタンプを押した場合、実際に記録される時間は19:20になります。
+### 必要環境
 
-作成したタイムスタンプリストはコピーボタンを押すことでクリップボードにコピーすることができます。
+- Node.js 24
+- Yarn
 
-## 注意事項
+### セットアップ
 
-※リアルタイムの場合、回線等の状況によっては実際の経過時間とズレることがあります。
-※Youtube Live Clockと併用した場合、一部表示が乱れることがあります。タイムスタンプ作成に支障はございません。
+```bash
+yarn install
+```
 
-## 免責事項
+### コマンド
 
-このChrome拡張によりいかなる損失や損害などが発生しても責任を負いかねます。ご了承ください。
+| コマンド          | 説明                                              |
+| ----------------- | ------------------------------------------------- |
+| `yarn dev`        | 開発ビルド（`dist/` に出力）                      |
+| `yarn watch`      | 変更を監視しながら開発ビルド                      |
+| `yarn prod`       | 本番ビルド（`dist/` に出力）                      |
+| `yarn release`    | 本番ビルド後に `release/extension.zip` を作成     |
+| `yarn typecheck`  | 型チェック                                        |
+| `yarn lint`       | prettier + oxlint（自動修正あり）                 |
+| `yarn lint-check` | prettier + oxlint のチェックのみ（CI と同じ内容） |
 
-Assists in creating YouTube timestamps.
+### 技術構成
 
-## Functions
+React 19 / TypeScript / Bootstrap 5 / webpack（esbuild-loader）/ Manifest V3 の content script。
 
-This is a tool to assist in creating YouTube timestamps. It is used to specify the time in the comment or summary field.
+金額の取得はマネーフォワードのページの DOM 解析に依存しているため、サイト側の HTML が変更されると動作しなくなる可能性があります。
 
-## How to use
+## ライセンス
 
-Click the "+" button to record the elapsed time of the video/streaming at that point.
-
-## Notes
-
-In the case of real time, the actual elapsed time may differ depending on the connection conditions, etc.
-
-## Disclaimer
-
-We are not responsible for any loss or damage caused by this Chrome Extension. Please understand that we are not responsible for any loss or damage caused by this extension.
+Apache-2.0（[LICENSE](LICENSE) を参照）
