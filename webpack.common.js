@@ -1,6 +1,5 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
-const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   plugins: [
@@ -16,7 +15,6 @@ module.exports = {
         },
       ],
     }),
-    new Dotenv({ systemvars: true }),
   ],
   output: {
     path: `${__dirname}/dist`,
