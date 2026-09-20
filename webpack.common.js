@@ -26,8 +26,9 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|tsx)$/,
-        loader: 'ts-loader',
+        loader: 'esbuild-loader',
         exclude: /node_modules/,
+        options: { tsconfig: 'tsconfig.json' },
       },
       {
         test: /\.s[ac]ss$/i,
