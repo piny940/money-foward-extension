@@ -644,9 +644,9 @@ async@^3.2.4:
   integrity sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA==
 
 b4a@^1.6.4, b4a@^1.8.1:
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/b4a/-/b4a-1.8.1.tgz#7f16334ca80127aeb26064a28841acbf174840a4"
-  integrity sha512-aiqre1Nr0B/6DgE2N5vwTc+2/oQZ4Wh1t4NznYY4E00y8LCt6NqdRv81so00oo27D8MVKTpUa/MwUUtBLXCoDw==
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/b4a/-/b4a-1.9.0.tgz#6336313b6e76b299c397afa68676ec6ebc788845"
+  integrity sha512-dpfcF9fDNR6++cthXR67iyhgqWy9CBouAvIWhIntzBG6cvK/cnIPiZQjBwi/ZqjjBEDGfoNDtmB0kTjroOJ3pQ==
 
 balanced-match@^1.0.0:
   version "1.0.2"
@@ -706,13 +706,12 @@ baseline-browser-mapping@^2.11.23:
   integrity sha512-gMmEShwwq7FJqMwvfRwvCl00v4kN+KOfJqXn+f4nrufak5gNHJOksd/60Dvjuz7sI8Y5WiSFBa8FEYr+zoyqCw==
 
 bestzip@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/bestzip/-/bestzip-4.0.0.tgz#c63805348b0214edad467e15e11f6927a8caa353"
-  integrity sha512-Hu3lBTGhxJ51PKaMJlhuCUVxEA1MN034R3F0+lHrE/dJkOVxChskXw6OrcgLcUVuB0Sj6bQAOtRIofOKsped8w==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/bestzip/-/bestzip-4.0.1.tgz#02ad6b7bb166966d9019e9bbb533e4e040f5f141"
+  integrity sha512-SRDsfTisoK6k6asichcESBfsj7XoFAV0JUaaHyxuC9YmSWVxCYWMoggxZaI2K2HiU+EcGuBAH5q59l8zvGUD9w==
   dependencies:
     archiver "^8.0.0"
     glob "^13.0.6"
-    which "^6.0.1"
     yargs "^16.2.0"
 
 big.js@^5.2.2:
@@ -1984,13 +1983,6 @@ which@^2.0.1:
   integrity sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==
   dependencies:
     isexe "^2.0.0"
-
-which@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/which/-/which-6.0.1.tgz#021642443a198fb93b784a5606721cb18cfcbfce"
-  integrity sha512-oGLe46MIrCRqX7ytPUf66EAYvdeMIZYn3WaocqqKZAxrBpkqHfL/qvTyJ/bTk5+AqHCjXmrv3CEWgy368zhRUg==
-  dependencies:
-    isexe "^4.0.0"
 
 which@^7.0.0:
   version "7.0.0"
