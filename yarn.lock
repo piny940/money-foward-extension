@@ -706,9 +706,9 @@ baseline-browser-mapping@^2.11.23:
   integrity sha512-gMmEShwwq7FJqMwvfRwvCl00v4kN+KOfJqXn+f4nrufak5gNHJOksd/60Dvjuz7sI8Y5WiSFBa8FEYr+zoyqCw==
 
 bestzip@^4.0.0:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/bestzip/-/bestzip-4.0.2.tgz#5c02693a99987a4c6322e36452e179daeb5971c0"
-  integrity sha512-7Yi7FrL/tcyhE+mYxPaZKTRcx7liRYS64qVuRY3parEcKwq/avjMhBbgovhaEByvVlhgEZT7nonHnKeu6pfj8A==
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/bestzip/-/bestzip-4.0.3.tgz#725688436b0c059a3910d0a784eb346f6a6abe23"
+  integrity sha512-whi8CW8smVjOgFlvE8CMIICq45Eb8n+chgiOD93d71eHZdqFcdDUc9L5OGAv9oycOWSFWz/BeUR8y8zVhiXVmg==
   dependencies:
     archiver "^8.0.0"
     glob "^13.0.6"
